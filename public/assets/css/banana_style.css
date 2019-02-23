@@ -1,0 +1,58 @@
+.jumbotron {
+    background-image: "../img/bluth-banana-stand.jpg";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
+}
+
+.jumbotron > h1 {
+    /* font-family: 'Bungee Shade', cursive; */
+    /* font-family: 'Seymour One', sans-serif; */
+    font-family: 'Nosifer', cursive;
+    /* font-family: 'Slackey', cursive; */
+    /* font-family: 'Notable', sans-serif; */
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+p#color-override {
+    font-size: 3em;
+    text-align: center;
+}
+
+h2#color-override {
+    font-size: 3em;
+}
+
+label#color-override {
+    font-size: 1.5em;
+}
+
+#newbanana {
+    border-radius: 5px;
+    height: 34px;
+}
+
+#color-override {
+    color: black;
+}
+
+#lefthead {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
+#eatbutton, #trashbutton {
+    float: right;
+}
+
+#righthead {
+    background-color: #f0ad4e;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}

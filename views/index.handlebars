@@ -1,27 +1,56 @@
 <div class="container">
+
+    <div class="jumbotron">
+        <h1 id="color-override">Bluth's Original Frozen Banana Stand</h1>
+        <p id="color-override">Make your own tasty banana treat!</p>
+        <br>
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newbanana" id="color-override">New Banana Treat:</label>
+                    <input type="text" id="newbanana" name="banana">
+                    {{!-- Create a Button in index.handlebars that will Submit the User Input into the Database --}}
+                    <button type="submit" class="btn btn-success" id="addbanana"><p>Yum!</p></button>
+                </div>
+            </form>
+        </panel>
+    </div><!-- /jumbotron -->
+
     <div class="row">
-        <div class="col-xs-12 text-center" id="top-bar">
-            <h1>Bluth's Original Frozen Banana Stand</h1>
-        </div>
-        <div class="col-xs-6 text-center" class="task">
-            <div class="row">
-                {{#each banana_data}}
-                {{#unless this.devoured}}
-                <div class="col-xs-9 text-center">
-                    <pre>{{this.id}}. {{this.banana_name}}</pre>
+        <!-- Undevoured Bananas -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead"><strong>New Bananas</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each Bananas}}
+                            {{#unless devoured}}
+                                <span><strong> {{this.id}} - {{this.banana_name}} </strong></span>
+                                <button type="button" class="eatbanana btn btn-warning" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                                <hr>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
                 </div>
-                <div class="col-xs-3 text-centered">
-                    <form method="POST" action="/bananers/update?_method=PUT" class="button-size">
-                        <input type="hidden" name="banana_id" type="text" value={{this.id}}>
-                        <br>
-                        <button type="submit" class="btn btn-default">
-                            EAT IT!
-                        </button>
-                    </form>
-                </div>
-                {{/unless}}
-                {{/each}}
             </div>
         </div>
-    </div>
-</div>
+        <!-- Devoured Banana -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="righthead"><strong>Devoured Bananas</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each bananas}}
+                            {{#if devoured}}
+                                <span><strong> {{this.id}} - {{this.banana_name}} </strong></span>
+                                <button type="button" class="trashbanana btn btn-danger" id ="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                                <hr>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- /row -->
+
+</div><!-- /container -->

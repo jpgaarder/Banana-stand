@@ -1,4 +1,4 @@
-INSERT INTO bananers (name, devoured) VALUES ('Frozen Banana', false);
-INSERT INTO bananers (name, devoured) VALUES ('The George Daddy', false);
-INSERT INTO bananers (name, devoured) VALUES ('The G.O.B.', false);
-INSERT INTO bananers (name, devoured) VALUES ('The Simple Simon', false);
+INSERT INTO bananers (banana_name, devoured) VALUES ('Frozen Banana', FALSE);
+INSERT INTO bananers (banana_name, devoured) VALUES ('The George Daddy', FALSE);
+INSERT INTO bananers (banana_name, devoured) VALUES ('The G.O.B.', FALSE);
+INSERT INTO bananers (banana_name, devoured) VALUES ('The Simple Simon', FALSE);
